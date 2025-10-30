@@ -1,7 +1,14 @@
 import type { Config } from "@react-router/dev/config";
 
+const DEVELOPMENT_BASENAME = 'cinema'
+
+process.env.BASENAME = DEVELOPMENT_BASENAME
+
 export default {
-  // Config options...
-  // Server-side render by default, to enable SPA mode set this to `false`
+  routeDiscovery:{
+    mode: 'initial'
+  },
+  appDirectory: 'app',
+  basename:`/${DEVELOPMENT_BASENAME}`,
   ssr: true,
 } satisfies Config;
