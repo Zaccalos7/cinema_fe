@@ -8,6 +8,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
+//on mac
 export default function Home() {
   return <Welcome />;
 }
