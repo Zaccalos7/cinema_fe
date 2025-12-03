@@ -1,6 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 
-const DEVELOPMENT_BASENAME = 'cinema'
+const DEVELOPMENT_BASENAME = 'orbis'
 
 process.env.BASENAME = DEVELOPMENT_BASENAME
 
