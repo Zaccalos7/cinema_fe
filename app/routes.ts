@@ -34,7 +34,7 @@ const getFilesFromPath = (path:string, extension: string) => {
 const getLists = async ()=>{
     const PROJECTS_LIST : {list: {[key: string]: YAMLProjectContent}} = {list : {}}
     const projectsFiles = [
-        ...getFilesFromPath('projects_config', "yaml"),
+        ...getFilesFromPath('projects_configs', "yaml"),
         ...getFilesFromPath('projects_configs', 'yml')
     ]
     projectsFiles.forEach(file => {
