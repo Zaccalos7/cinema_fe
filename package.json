@@ -1,6 +1,7 @@
 {
   "name": "cinema_fe",
   "private": true,
+  "sideEffects": false,
   "type": "module",
   "scripts": {
     "build": "react-router build",
