@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".react-router/types/**/*"],
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".react-router/types/**/*", "vite.config.mjs"],
   "compilerOptions": {
     "types": ["@react-router/node", "vite/client"],
     "lib": ["DOM", "DOM.Iterable", "ESNext", "ESNext.Array"],
