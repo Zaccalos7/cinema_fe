@@ -1,0 +1,13 @@
+singleQuote: true
+printWidth: 100
+tabWidth: 2
+useTabs: false
+trailingComma: none
+bracketSpacing: false
+jsxBracketSameLine: false
+semi: false
+arrowParens: avoid
+singleAttributePerLine: false
+endOfLine: lf
+plugins:
+  - prettier-plugin-curly
