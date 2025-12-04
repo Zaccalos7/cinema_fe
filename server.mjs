@@ -310,7 +310,7 @@ app.use((request, res, next) => {
   const key = urlSearchParams.get('key')
   let basename = basePath
   if (!basename) {
-    basename = 'hydra'
+    basename = 'orbis'
   }
   if (pathname === '/getFile' && key) {
     return res.redirect(307, `./${basename}/api/getFile?key=${key}`)
