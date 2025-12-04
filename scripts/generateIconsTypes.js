@@ -1,11 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 
-const iconsDir = path.resolve(process.cwd(), 'node_modules/lucide-react/dist/esm/icons')
+
+const iconsDir = path.resolve(process.cwd(), 'node_modules/lucide/dist/esm/icons')
 
 const outputFile = path.resolve('types/icons.d.ts')
 
 const generateIconsTypes = () => {
+
   const files = fs.readdirSync(iconsDir)
 
   // Filtra solo i .js, escludendo i .map

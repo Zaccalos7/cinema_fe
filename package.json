@@ -4,11 +4,16 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
+    "generate:icons": "node scripts/generateIconsTypes.js",
+    "check-node-version": "node -e \"const v=process.versions.node.split('.');if(+v[0]<20||(v[0]==20&&+v[1]<9)||+v[0]>=23)throw new Error('Node version must be >= 20.9.0 and < 23.0.0')\"",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "tsc",
+    "dev:internal": "node scripts/updateBuildWorkflow.js && npm run check-node-version && npm run generate:icons && npm i && node ./server.mjs",
+    "dev": "cross-env REACT_COMPILER=1 npm run dev:internal",
+    "build": "cross-env REACT_COMPILER=1 node genBuild.js",
+    "build-core-used-internally-do-not-edit": "npm run check-node-version && react-router build",
+    "start": "cross-env NODE_ENV=production ./node_modules/dotenv-cli/cli.js -e .env node server.mjs",
+    "test": "vitest"
   },
   "dependencies": {
     "@react-router/node": "^7.9.2",
@@ -16,6 +21,7 @@
     "@vitejs/plugin-react": "5.1.1",
     "isbot": "^5.1.31",
     "js-yaml": "^4.1.1",
+    "lucide": "0.555.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.9.2",
