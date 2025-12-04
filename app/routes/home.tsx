@@ -4,7 +4,7 @@ import type {Route} from './+types/home'
 const Home = () => {
   return (
     <>
-      <div>ciao</div>
+      <div className="content">ciao</div>
     </>
   )
 }
