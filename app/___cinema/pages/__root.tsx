@@ -1,7 +1,7 @@
-import { Outlet } from "react-router"
+import {Outlet} from 'react-router'
 
-const Root = ()=> {
-    return <Outlet/>
+const Root = () => {
+  return <Outlet />
 }
 
 export default Root

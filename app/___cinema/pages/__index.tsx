@@ -1,8 +1,5 @@
-const index = ()=> {
-    return(
-        <>
-        </>
-    )
+const index = () => {
+  return <></>
 }
 
 export default index
