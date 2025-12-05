@@ -21,8 +21,8 @@ const projects = files
   .filter(project => project !== null)
   .sort()
 
-const workflowContent = `name: Hydra Build
-run-name: "Hydra Build - \${{ github.event.inputs.project }}"
+const workflowContent = `name: Orbis Build
+run-name: "Orbis Build - \${{ github.event.inputs.project }}"
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ on:
       basepath:
         description: 'Base path for the whole app'
         required: true
-        default: 'hydra'
+        default: 'orbis'
       project:
         description: 'Select project'
         required: true
