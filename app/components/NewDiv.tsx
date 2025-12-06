@@ -3,6 +3,12 @@ type NewDivProps = {
   children?: React.ReactNode
 }
 
-const NewDiv = ({className = ''}: NewDivProps) => {}
+const NewDiv = ({className = '', children}: NewDivProps) => {
+  return (
+    <div className="contents">
+      <div>{children}</div>
+    </div>
+  )
+}
 
-export default NewDiv
+export {NewDiv}

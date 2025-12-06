@@ -1,10 +1,11 @@
+import {NewDiv} from '~/components/NewDiv'
 import type {Route} from './+types/home'
 
 //on mac
 const Home = () => {
   return (
     <>
-      <div className="content">ciao</div>
+      <NewDiv className="content">ciao</NewDiv>
     </>
   )
 }
