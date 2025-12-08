@@ -1,3 +1,5 @@
+import {cn} from '~/libs/cn'
+
 type NewDivProps = {
   className?: string
   children?: React.ReactNode
@@ -6,7 +8,7 @@ type NewDivProps = {
 const NewDiv = ({className = '', children}: NewDivProps) => {
   return (
     <div className="contents">
-      <div>{children}</div>
+      <div className={cn(className)}>{children}</div>
     </div>
   )
 }
