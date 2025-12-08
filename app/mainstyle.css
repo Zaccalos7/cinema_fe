@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.MuiAppBar-positionFixed fieldset {
+  border: none;
+}
+
+.appbar-toolbar div[data-cy='language-selector'] svg {
+  color: #fff;
+}
