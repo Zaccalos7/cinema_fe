@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "generate:icons": "node scripts/generateIconsTypes.js",
-    "check-node-version": "node -e \"const v=process.versions.node.split('.');if(+v[0]<20||(v[0]==20&&+v[1]<9)||+v[0]>=25)throw new Error('Node version must be >= 20.9.0 and < 25.0.0')\"",
+    "check-node-version": "node -e \"const v=process.versions.node.split('.');if(+v[0]<24||(v[0]==24&&+v[1]<9)||+v[0]>=25)throw new Error('Node version must be >= 24.0.0 and < 25.0.0')\"",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "dev:internal": "node scripts/updateBuildWorkflow.js && npm run check-node-version && npm run generate:icons && npm i && node ./server.mjs",
