@@ -5,7 +5,7 @@ import type {Route} from './+types/home'
 const Home = () => {
   return (
     <>
-      <NewDiv className="content">ciao</NewDiv>
+      <NewDiv className="bg-red-500">ciao</NewDiv>
     </>
   )
 }
