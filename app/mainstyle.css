@@ -1,9 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    color-scheme: dark;
+  }
 }
 
 .MuiAppBar-positionFixed fieldset {
