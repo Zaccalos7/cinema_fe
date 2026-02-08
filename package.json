@@ -16,6 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-tooltip": "1.2.8",
     "@react-router/node": "^7.9.2",
     "@react-router/remix-config-routes-adapter": "0.0.0-nightly-bf7ecb711-20240911",
     "@react-router/serve": "^7.9.2",
