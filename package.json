@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "0.5.19",
     "@vitejs/plugin-react": "5.1.1",
     "babel-plugin-react-compiler": "1.0.0",
+    "class-variance-authority": "0.7.1",
     "color": "5.0.3",
     "colors": "1.4.0",
     "dotenv": "17.2.3",
