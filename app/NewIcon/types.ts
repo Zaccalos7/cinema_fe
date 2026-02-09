@@ -1,4 +1,4 @@
-export type NextIconNames =
+export type NewIconNames =
   | 'tools, options, repair'
   | 'factory'
   | 'help'
