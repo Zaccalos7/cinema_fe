@@ -1,5 +1,5 @@
 import {Children, isValidElement, useEffect, useRef, useState} from 'react'
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from './ui/tooltip'
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from '~/components/ui/tooltip'
 
 interface NewTooltipProps {
   children: React.ReactNode | string
@@ -99,4 +99,4 @@ const NewTooltip = ({
   )
 }
 
-export default NewTooltip
+export {NewTooltip}
