@@ -1,8 +1,10 @@
-import {HtmlHTMLAttributes, useId} from 'react'
-import NewTooltip from './NewTooltip'
-import {Button} from './ui/button'
+import {useId} from 'react'
+import {Loader2} from 'lucide-react'
+
+import {Button} from '~/components/ui/button'
 import {cn} from '~/libs/cn'
-import NewIcon from './NewIcon'
+
+import {NewIcon, type NewIconNames, type NewIconProps, NewTooltip} from '~/components'
 
 interface NewButtonBaseProps {
   variant?:
@@ -22,6 +24,7 @@ interface NewButtonBaseProps {
   name?: string
   fullWidth?: boolean
   iconName?: NewIconNames
+  iconFill?: NewIconProps['color']
   iconPosition?: 'left' | 'right'
   isBold?: boolean
   truncate?: boolean
@@ -54,8 +57,11 @@ const NewButton = ({
   isBold,
   isUpperCase,
   truncate = false,
+  fullSpaceWithIcon = false,
   ref,
   iconPosition,
+  iconFill,
+  label,
   labelClassName,
   isLoading,
   iconName,
@@ -122,4 +128,4 @@ const NewButton = ({
   )
 }
 
-export default NewButton
+export {NewButton}
