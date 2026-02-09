@@ -1,7 +1,7 @@
 // COMPONENT
 export {NewButton} from './NewButton'
 export {NewDiv} from './NewDiv'
-export {NewIcon} from './NewIcon'
+export {NewIcon, type IconNames as NewIconNames, type NewIconProps} from './NewIcon'
 export {NewTooltip} from './NewTooltip'
 export {NewTypography} from './NewTypography'
 
