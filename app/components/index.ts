@@ -9,3 +9,4 @@ export {NewInput} from './NewInput'
 // PRIMITIVE
 export {Button} from './ui/button'
 export {Tooltip} from './ui/tooltip'
+export {Label} from './ui/label'
