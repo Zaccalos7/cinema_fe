@@ -11,4 +11,5 @@ export default {
   appDirectory: 'app',
   basename:`/${DEVELOPMENT_BASENAME}`,
   ssr: true,
+  //serverBuildFile: 'index.js'
 } satisfies Config;
