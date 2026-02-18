@@ -4,7 +4,7 @@ import './mainstyle.css'
 
 export const Layout = ({children}: {children: React.ReactNode}) => {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,7 +12,7 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="w-screen h-screen flex flex-col">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>
