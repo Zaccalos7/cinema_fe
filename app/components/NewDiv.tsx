@@ -6,6 +6,7 @@ type NewDivProps = {
   style?: React.CSSProperties
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   center?: boolean
+  bordered?: boolean
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch' | 'normal'
   align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline' | 'normal'
   backgroundColor?: 'success' | 'warning' | 'destructive'
@@ -52,7 +53,8 @@ const NewDiv = ({
   center = false,
   justify = 'normal',
   align = 'normal',
-  backgroundColor
+  backgroundColor,
+  bordered = false
 }: NewDivProps) => {
   const computedClassName = [
     'flex',
@@ -60,7 +62,8 @@ const NewDiv = ({
     center ? 'justify-center items-center' : '',
     !center ? `${justifyValuesMap[justify]}` : '',
     !center ? `${alignValuesMap[align]}` : '',
-    backgroundColor ? backgroundColorValuesMap[backgroundColor] : ''
+    backgroundColor ? backgroundColorValuesMap[backgroundColor] : '',
+    bordered ? 'border border-gray-200 rounded-md' : ''
   ]
   return (
     <div className="contents">
