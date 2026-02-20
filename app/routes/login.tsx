@@ -11,7 +11,7 @@ const LoginPage = () => {
         className="h-1/2 w-1/3 gap-10 p-2 items-center justify-center bg-black"
         direction="column"
       >
-        <NewInput />
+        <NewInput label="" />
         <NewInput />
       </NewDiv>
     </NewDiv>
