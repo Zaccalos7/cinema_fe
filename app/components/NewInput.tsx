@@ -144,7 +144,7 @@ const NewInput = ({
                 error ? ' ring-2 ring-red-600 focus-visible:ring-2 focus-visible:ring-red-600' : ''
               }`
         }
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange={e => {
           if (setValue) {
             setValue(e.target.value)
           }
