@@ -24,8 +24,21 @@ type InputRegisterBlockType = {
 
 export const action = async ({request}: Route.ActionArgs) => {
   const formData = await request.formData()
+
   const intent = formData.get('intent')
+  const userData = formData.get('userData') as string
+
+  const userDataParsed = JSON.parse(userData)
   console.log('intent', intent)
+  console.log('userdata', userDataParsed)
+
+  const response = await fetch('http://localhost:8080/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userDataParsed)
+  })
 }
 
 const InputRegisterBlock = ({
@@ -115,7 +128,10 @@ const Register = () => {
           disabled={!arePresentAllUserDataField}
           label="Conferma"
           onClick={() => {
-            registerFetcher.submit({intent: 'addNewUser'}, {method: 'POST'})
+            registerFetcher.submit(
+              {intent: 'addNewUser', userData: JSON.stringify(userData)},
+              {method: 'POST'}
+            )
           }}
         />
       </NewDiv>
