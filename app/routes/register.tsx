@@ -1,6 +1,6 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {type IconName} from 'types/icons'
-import {Button, NewButton, NewDiv, NewIcon, NewInput, NewTypography} from '~/components'
+import {NewButton, NewDiv, NewIcon, NewInput, NewTypography} from '~/components'
 import {black, blue, yellow} from '~/libs/tailwind-colors'
 import {cn} from '~/libs/cn'
 import {useFetcher} from 'react-router'
@@ -22,6 +22,10 @@ type InputRegisterBlockType = {
   color?: string
 }
 
+const API_URL = 'http://localhost:8080/register'
+
+const CHAR_NOT_FOUND = -1
+
 export const action = async ({request}: Route.ActionArgs) => {
   const formData = await request.formData()
 
@@ -29,16 +33,56 @@ export const action = async ({request}: Route.ActionArgs) => {
   const userData = formData.get('userData') as string
 
   const userDataParsed = JSON.parse(userData)
-  console.log('intent', intent)
-  console.log('userdata', userDataParsed)
 
-  const response = await fetch('http://localhost:8080/register', {
+  let success = false
+
+  const responseFromValidation = validateFormData(userDataParsed)
+
+  success = responseFromValidation.success
+
+  console.log(success, responseFromValidation.type)
+
+  if (!success) {
+    return {
+      success,
+      message: responseFromValidation.type
+    }
+  }
+
+  const response = await fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(userDataParsed)
   })
+
+  const responseJson = await response.json()
+
+  console.log(responseJson)
+
+  return {
+    success
+  }
+}
+
+const validateFormData = (data: UserDataType) => {
+  let response = {type: '', success: true}
+  const isNotAValidEmail = data.email.search('@') === CHAR_NOT_FOUND
+
+  if (isNotAValidEmail) {
+    response = {type: 'isNotAValidEmail', success: false}
+    return response
+  }
+
+  const arePasswordsDifferent = data.password !== data.confirmPassword
+
+  if (arePasswordsDifferent) {
+    response = {type: 'arePasswordsDifferent', success: false}
+    return response
+  }
+
+  return response
 }
 
 const InputRegisterBlock = ({
@@ -74,6 +118,14 @@ const Register = () => {
   const arePresentAllUserDataField = Object.values(userData).every(item => item.trim() !== '')
 
   const registerFetcher = useFetcher()
+
+  useEffect(() => {
+    if (!registerFetcher.data) {
+      return
+    }
+
+    alert('registrato')
+  }, [registerFetcher.data])
 
   return (
     <NewDiv className="h-full w-full items-center justify-center" direction="column">
@@ -126,7 +178,7 @@ const Register = () => {
         <NewButton
           type="button"
           disabled={!arePresentAllUserDataField}
-          label="Conferma"
+          label="Entra in Orbis"
           onClick={() => {
             registerFetcher.submit(
               {intent: 'addNewUser', userData: JSON.stringify(userData)},
