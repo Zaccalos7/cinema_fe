@@ -4,7 +4,7 @@ import {NewButton, NewDiv, NewIcon, NewInput, NewTypography} from '~/components'
 import {black, blue, yellow} from '~/libs/tailwind-colors'
 import {cn} from '~/libs/cn'
 import {useFetcher} from 'react-router'
-import {Route} from './+types/register'
+import {type Route} from './+types/register'
 
 type UserDataType = {
   nickName: string
