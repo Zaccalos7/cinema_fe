@@ -12,7 +12,7 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="w-screen h-screen flex flex-col">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>

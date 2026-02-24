@@ -279,4 +279,4 @@ const NewTypography = ({
   return wrapperJsx[variant]({children, ref, computedAdditionalClassName, style, onClick})
 }
 
-export default NewTypography
+export {NewTypography}

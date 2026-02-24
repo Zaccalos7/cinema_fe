@@ -1,5 +1,5 @@
 import {Children, isValidElement, useEffect, useRef, useState} from 'react'
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from './ui/tooltip'
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from '~/components/ui/tooltip'
 
 interface NewTooltipProps {
   children: React.ReactNode | string
@@ -58,15 +58,20 @@ const NewTooltip = ({
   }
 
   useEffect(() => {
-    if (ref.current) {
-      ref.current.addEventListener('mouseenter', onMouseEnter)
-      ref.current.addEventListener('mouseleave', onMouseLeave)
-      ref.current.addEventListener('focus', onFocus)
+    const currentRef = ref?.current
+
+    if (!currentRef) {
+      return
     }
+
+    currentRef.addEventListener('mouseenter', onMouseEnter)
+    currentRef.addEventListener('mouseleave', onMouseLeave)
+    currentRef.addEventListener('focus', onFocus)
+
     return () => {
-      ref?.current?.removeEventListener('mouseenter', onMouseEnter)
-      ref?.current?.removeEventListener('mouseleave', onMouseLeave)
-      ref?.current?.removeEventListener('focus', onFocus)
+      currentRef?.removeEventListener('mouseenter', onMouseEnter)
+      currentRef?.removeEventListener('mouseleave', onMouseLeave)
+      currentRef?.removeEventListener('focus', onFocus)
     }
   }, [])
 
@@ -94,4 +99,4 @@ const NewTooltip = ({
   )
 }
 
-export default NewTooltip
+export {NewTooltip}
