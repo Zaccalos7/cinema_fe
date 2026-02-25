@@ -95,7 +95,7 @@ const InputRegisterBlock = ({
 }: InputRegisterBlockType) => {
   return (
     <NewDiv className={cn(className, 'w-full  items-center justify-center gap-4 px-2')}>
-      <NewDiv className={cn(labelClassName, 'w-7/12 items-center justify-center')}>
+      <NewDiv className={cn(labelClassName, 'w-5/12 items-center justify-center')}>
         <NewTypography variant="body1" bold>
           {label}
         </NewTypography>
