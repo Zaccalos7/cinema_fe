@@ -16,6 +16,8 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@inquirer/prompts": "8.3.0",
+    "@inquirer/select": "5.1.0",
     "@radix-ui/react-label": "2.1.8",
     "@radix-ui/react-tooltip": "1.2.8",
     "@react-router/node": "^7.9.2",
