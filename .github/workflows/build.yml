@@ -15,6 +15,7 @@ on:
         options:
           - no_project
           - cinema
+          - twitch
       connections:
         description: 'Extra connections (comma-separated) If not specified, config declared ones will be used.'
         required: false
