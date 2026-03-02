@@ -45,10 +45,10 @@ on:
         description: 'Node.js version'
         required: true
         type: choice
-        default: '22.14.0'
+        default: '24.11.0'
         options:
+          - '24.11.0'
           - '22.14.0'
-          - '20.13.1'
 
 
 jobs:
