@@ -11,7 +11,7 @@ import {type IconName} from '../../types/icons'
 import {cn} from '~/libs/cn'
 import {NewTooltip} from './NewTooltip'
 
-const sizes = {
+export const sizes = {
   smaller: 14,
   small: 16,
   medium: 24,
