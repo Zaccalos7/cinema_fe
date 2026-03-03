@@ -1,0 +1,38 @@
+/* ============================= */
+/*        ELEGANT PURPLE UI     */
+/* ============================= */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(98, 0, 234, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(124, 77, 255, 0.18), transparent 50%),
+    linear-gradient(180deg, #f3f4f8 0%, #e9ebf3 100%);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+}
+
+/* ============================= */
+/*           BUTTONS            */
+/* ============================= */
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(40, 20, 90, 0.15);
+}
+
+button[type='submit'] {
+  background: rgba(76, 29, 149, 0.85);
+  color: white;
+  border: none;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background: rgba(76, 29, 149, 0.95);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

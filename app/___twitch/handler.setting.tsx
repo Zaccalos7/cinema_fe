@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {NewButton, NewDiv, NewIcon, NewInput, NewRadioButtons, NewTypography} from '~/components'
 import {type RadioItem} from '~/components/NewRadioButtons'
+import './styles/handlerSettingsStyle.css'
 
 const HandlerSetting = () => {
   const options: RadioItem[] = [
@@ -14,11 +15,12 @@ const HandlerSetting = () => {
   const shouldBePresentAllTheValue = Object.values(streamValues).every(item => item.trim() !== '')
 
   return (
-    <NewDiv className="w-5/6 h-full" direction="column">
+    <NewDiv className="w-5/6 h-full handlerSettingsStyle" direction="column">
       {JSON.stringify({streamValues})}
       <NewDiv className="h-1/6 w-full items-center justify-center p-2 gap-4" direction="column">
         <NewTypography variant="h2">{'Impostazioni Diretta'}</NewTypography>
         <NewRadioButtons
+          className="radioButtonsStyle"
           options={options}
           orientation="horizontal"
           labelClassName="text-xl"
