@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import { NewDiv, NewIcon, NewLabel, sizes } from "~/components"
-import { RadioGroup, RadioGroupItem } from "./ui/radioGroup"
-import { cn } from "~/libs/cn"
-import { type IconName } from '../../types/icons'
+import {useState} from 'react'
+import {NewDiv, NewIcon, NewLabel, sizes} from '~/components'
+import {RadioGroup, RadioGroupItem} from './ui/radioGroup'
+import {cn} from '~/libs/cn'
+import {type IconName} from '../../types/icons'
 
 export interface RadioIconProps {
   className?: string
@@ -49,28 +49,26 @@ const RadioGroupInnerComponent = ({
         value={value}
         onValueChange={onValueChange}
         className={cn(
-          "flex",
-          orientation === "horizontal"
-            ? "flex-row items-center gap-6"
-            : "flex-col gap-3",
+          'flex',
+          orientation === 'horizontal' ? 'flex-row items-center gap-6' : 'flex-col gap-3',
           className
         )}
       >
-        {options.map(({ value: optionValue, label, radioIconProps }) => {
-          const id = `radio-${name ?? "group"}-${optionValue}`
+        {options.map(({value: optionValue, label, radioIconProps}) => {
+          const id = `radio-${name ?? 'group'}-${optionValue}`
 
           return (
             <div key={optionValue} className="flex items-center gap-2">
               <RadioGroupItem
                 id={id}
                 value={optionValue}
-                className={cn("shrink-0", buttonClassName)}
+                className={cn('shrink-0', buttonClassName)}
               />
 
               <NewLabel
                 htmlFor={id}
                 className={cn(
-                  "flex items-center gap-2 cursor-pointer leading-none",
+                  'flex items-center gap-2 cursor-pointer leading-none',
                   labelClassName
                 )}
               >
@@ -78,10 +76,7 @@ const RadioGroupInnerComponent = ({
                   <NewIcon
                     name={radioIconProps.iconName}
                     size={radioIconProps.size}
-                    className={cn(
-                      "inline-block align-middle",
-                      radioIconProps.className
-                    )}
+                    className={cn('inline-block align-middle', radioIconProps.className)}
                   />
                 )}
 
@@ -107,7 +102,6 @@ const NewRadioButtons = ({
   buttonClassName,
   labelClassName
 }: NewRadioGroupProps) => {
-
   const isControlled = value !== undefined
   const [internalValue, setInternalValue] = useState(defaultValue)
 
@@ -123,7 +117,7 @@ const NewRadioButtons = ({
 
   if (fakeLabel) {
     return (
-      <NewDiv justify="end" style={{ paddingBottom: 5.5 }}>
+      <NewDiv justify="end" style={{paddingBottom: 5.5}}>
         <NewLabel className="invisible">&nbsp;</NewLabel>
 
         <NewDiv>
@@ -156,4 +150,4 @@ const NewRadioButtons = ({
   )
 }
 
-export { NewRadioButtons }
+export {NewRadioButtons}
