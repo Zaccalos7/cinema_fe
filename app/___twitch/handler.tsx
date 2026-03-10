@@ -1,11 +1,14 @@
-import {Outlet, useNavigate} from 'react-router'
-import {NewButton, NewDiv} from '~/components'
+import {Outlet, useNavigate, useNavigation} from 'react-router'
+import {NewButton, NewDiv, NewSpinner, NewUILocker} from '~/components'
 
 const HandleLive = () => {
   const navigate = useNavigate()
+  const navigation = useNavigation()
 
   return (
     <NewDiv className="w-full h-full p-4 gap-1" direction="row">
+      {navigation.state !== 'idle' && <NewUILocker customMessage="Loading..." />}
+
       <NewDiv
         className="h-full w-1/6 items-center justify-start bg-sidebar-foreground bg-indigo-950 border-2
            border-violet-950 p-4 "
@@ -42,6 +45,7 @@ const HandleLive = () => {
           />
         </NewDiv>
       </NewDiv>
+
       <Outlet />
     </NewDiv>
   )
