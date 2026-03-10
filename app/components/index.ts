@@ -8,6 +8,7 @@ export {NewInput} from './NewInput'
 export {NewLabel} from './NewLabel'
 export {NewRadioButtons, type RadioItem} from './NewRadioButtons'
 export {NewSpinner} from './NewSpinner'
+export {NewUILocker} from './NewUILocker'
 
 // PRIMITIVE
 export {Button} from './ui/button'
