@@ -1,5 +1,7 @@
 import {Outlet, Links, Meta, Scripts, ScrollRestoration} from 'react-router'
+import {Toaster as SonnerToaster} from '~/components/ui/sonner'
 import './app.css'
+import './globalStyles/toaster.css'
 import './mainstyle.css'
 
 export const Layout = ({children}: {children: React.ReactNode}) => {
@@ -12,7 +14,11 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
         <Links />
       </head>
       <body>
+        <noscript>
+          <div>ORBIS: PLEASE ENABLE JAVASCRIPT.</div>
+        </noscript>
         <div className="w-screen h-screen flex flex-col">{children}</div>
+        <SonnerToaster position="top-center" richColors className="toaster" />
         <ScrollRestoration />
         <Scripts />
       </body>
