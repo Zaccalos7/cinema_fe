@@ -2,8 +2,7 @@ import {NewDiv} from '~/components/NewDiv'
 import type {Route} from './+types/home'
 
 import {useEffect} from 'react'
-
-import {useToast} from '~/components/NewToast'
+import {useToast} from '~/hooks/useToast'
 
 //on mac
 const Home = () => {
