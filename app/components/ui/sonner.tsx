@@ -1,0 +1,30 @@
+import {Toaster as Sonner} from 'sonner'
+import {NewIcon} from '../NewIcon'
+
+type ToasterProps = React.ComponentProps<typeof Sonner>
+
+const Toaster = ({...props}: ToasterProps) => {
+  return (
+    <Sonner
+      icons={{
+        success: <NewIcon name="check" />,
+        info: <NewIcon name="info" />,
+        warning: <NewIcon name="circle-alert" />,
+        error: <NewIcon name="x" />
+      }}
+      className="toaster group pointer-events-auto"
+      toastOptions={{
+        classNames: {
+          toast:
+            'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
+          description: 'group-[.toast]:text-muted-foreground',
+          actionButton: 'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
+          cancelButton: 'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground'
+        }
+      }}
+      {...props}
+    />
+  )
+}
+
+export {Toaster}
