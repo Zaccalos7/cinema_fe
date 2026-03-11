@@ -22,7 +22,7 @@ type InputRegisterBlockType = {
   color?: string
 }
 
-const API_URL = 'http://localhost:8080/register'
+const API_URL = 'http://localhost:1200/register'
 
 const CHAR_NOT_FOUND = -1
 
