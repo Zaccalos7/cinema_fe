@@ -34,6 +34,17 @@ const HandleLive = () => {
               navigate('./taskManager')
             }}
           />
+
+          <NewButton
+            className="w-full bg-indigo-950 border-2 border-purple-200"
+            type="button"
+            label="Configurazioni"
+            iconName="columns-3-cog"
+            onClick={() => {
+              navigate('./configurations')
+            }}
+          />
+
           <NewButton
             className="w-full bg-indigo-950 border-2 border-purple-200"
             type="button"
