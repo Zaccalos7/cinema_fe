@@ -12,6 +12,7 @@ import {
 import {type RadioItem} from '~/components/NewRadioButtons'
 import './styles/handlerSettingsStyle.css'
 import {useToast} from '~/hooks/useToast'
+import {type SettingRecord} from './types/settingTypes'
 
 const HandlerSetting = () => {
   const options: RadioItem[] = [
@@ -20,7 +21,7 @@ const HandlerSetting = () => {
   ]
 
   const [isPasswordHidden, setIsPasswordHidden] = useState(true)
-  const [streamValues, setStreamValues] = useState({
+  const [streamValues, setStreamValues] = useState<SettingRecord>({
     streamUrl: '',
     streamKey: '',
     platformStreamName: ''
