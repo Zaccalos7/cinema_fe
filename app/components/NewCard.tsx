@@ -13,8 +13,8 @@ interface NewCardProps {
 
 const NewCard = ({width, title, description, children, footer, className}: NewCardProps) => {
   return (
-    <Card className={cn('w-full overflow-hidden', className)} style={{...(width && {width})}}>
-      <NewDiv className="w-full flex flex-col gap-3" align="start" justify="start">
+    <Card className={cn('w-full overflow-hidden gap-2', className)} style={{...(width && {width})}}>
+      <NewDiv className={cn('w-full flex flex-col', className)} align="start" justify="start">
         {(title || description) && (
           <CardHeader className="p-2 flex flex-col w-full">
             {title && (
