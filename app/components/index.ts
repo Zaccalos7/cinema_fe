@@ -10,6 +10,7 @@ export {NewRadioButtons, type RadioItem} from './NewRadioButtons'
 export {NewSpinner} from './NewSpinner'
 export {NewUILocker} from './NewUILocker'
 export {NewSelect} from './NewSelect'
+export {NewCard} from './NewCard'
 
 // PRIMITIVE
 export {Button} from './ui/button'
