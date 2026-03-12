@@ -39,11 +39,11 @@ interface NewButtonBaseProps {
 }
 
 const fontSizesClassNames = {
-  smaller: 'text-[14px]',
+  smaller: 'text-[8px]',
   small: 'text-[16px]',
-  medium: 'text-[24px]',
-  large: 'text-[32px]',
-  huge: 'text-[64px]'
+  medium: 'text-[20px]',
+  large: 'text-[28px]',
+  huge: 'text-[36px]'
 }
 
 const NewButton = ({
