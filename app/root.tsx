@@ -1,4 +1,5 @@
 import {Outlet, Links, Meta, Scripts, ScrollRestoration} from 'react-router'
+import {NuqsAdapter} from 'nuqs/adapters/react-router/v7'
 import {Toaster as SonnerToaster} from '~/components/ui/sonner'
 import './app.css'
 import './globalStyles/toaster.css'
@@ -17,10 +18,12 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
         <noscript>
           <div>ORBIS: PLEASE ENABLE JAVASCRIPT.</div>
         </noscript>
-        <div className="w-screen h-screen flex flex-col">{children}</div>
-        <SonnerToaster position="top-center" richColors className="toaster" />
-        <ScrollRestoration />
-        <Scripts />
+        <NuqsAdapter>
+          <div className="w-screen h-screen flex flex-col">{children}</div>
+          <SonnerToaster position="top-center" richColors className="toaster" />
+          <ScrollRestoration />
+          <Scripts />
+        </NuqsAdapter>
       </body>
     </html>
   )
