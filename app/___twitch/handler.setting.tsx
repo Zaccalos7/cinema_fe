@@ -25,7 +25,8 @@ const HandlerSetting = () => {
   const [streamValues, setStreamValues] = useState<SettingRecord>({
     streamUrl: '',
     streamKey: '',
-    platformStreamName: ''
+    platformStreamName: '',
+    description: ''
   })
 
   const shouldBePresentAllTheValue = Object.values(streamValues).every(item => item.trim() !== '')
@@ -105,6 +106,23 @@ const HandlerSetting = () => {
             }}
           />
         </NewDiv>
+
+        <NewTypography variant="large" className="text-5xl">
+          Descrizione
+        </NewTypography>
+
+        <NewDiv className="w-2/3 items-center justify-center">
+          <NewInput
+            value={streamValues.description}
+            onChange={e =>
+              setStreamValues(prev => ({
+                ...prev,
+                description: e.target.value
+              }))
+            }
+          />
+        </NewDiv>
+
         <NewDiv className="w-full items-center justify-center gap-16 py-6">
           <NewButton
             type="button"
@@ -112,7 +130,12 @@ const HandlerSetting = () => {
             variant="secondary"
             onClick={() => {
               alert('x')
-              setStreamValues({platformStreamName: '', streamKey: '', streamUrl: ''})
+              setStreamValues({
+                platformStreamName: '',
+                streamKey: '',
+                streamUrl: '',
+                description: ''
+              })
             }}
           />
           <NewButton
@@ -124,7 +147,12 @@ const HandlerSetting = () => {
                 {data: JSON.stringify(streamValues)},
                 {method: 'POST', action: href('/twitch/api-setting-save')}
               )
-              setStreamValues({platformStreamName: '', streamKey: '', streamUrl: ''})
+              setStreamValues({
+                platformStreamName: '',
+                streamKey: '',
+                streamUrl: '',
+                description: ''
+              })
             }}
           />
         </NewDiv>
