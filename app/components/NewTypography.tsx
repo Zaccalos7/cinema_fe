@@ -118,10 +118,10 @@ const wrapperJsx: {
     )
   },
 
-  p: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
+  p: ({children, computedAdditionalClassName, style, onClick, ref}) => {
     const mergedClassNames = cn([
       'leading-7 [&:not(:first-child)]:mt-6',
-      computedAdditionalClassNames
+      computedAdditionalClassName
     ])
 
     return (
@@ -130,8 +130,8 @@ const wrapperJsx: {
       </p>
     )
   },
-  blockquote: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['mt-6 border-l-2 pl-6 italic', computedAdditionalClassNames])
+  blockquote: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['mt-6 border-l-2 pl-6 italic', computedAdditionalClassName])
 
     return (
       <blockquote ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -139,10 +139,10 @@ const wrapperJsx: {
       </blockquote>
     )
   },
-  inlineCode: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
+  inlineCode: ({children, computedAdditionalClassName, style, onClick, ref}) => {
     const mergedClassNames = cn([
       'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
-      computedAdditionalClassNames
+      computedAdditionalClassName
     ])
 
     return (
@@ -151,8 +151,8 @@ const wrapperJsx: {
       </code>
     )
   },
-  lead: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-xl text-muted-foreground', computedAdditionalClassNames])
+  lead: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-xl text-muted-foreground', computedAdditionalClassName])
 
     return (
       <p ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -160,8 +160,8 @@ const wrapperJsx: {
       </p>
     )
   },
-  large: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-lg font-semibold', computedAdditionalClassNames])
+  large: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-lg font-semibold', computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -169,8 +169,8 @@ const wrapperJsx: {
       </span>
     )
   },
-  small: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-sm font-medium leading-none', computedAdditionalClassNames])
+  small: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-sm font-medium leading-none', computedAdditionalClassName])
 
     return (
       <small ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -178,8 +178,8 @@ const wrapperJsx: {
       </small>
     )
   },
-  muted: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-sm text-muted-foreground', computedAdditionalClassNames])
+  muted: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-sm text-muted-foreground', computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -187,8 +187,8 @@ const wrapperJsx: {
       </span>
     )
   },
-  body1: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-base', computedAdditionalClassNames])
+  body1: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-base', computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -196,8 +196,8 @@ const wrapperJsx: {
       </span>
     )
   },
-  body2: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-sm', computedAdditionalClassNames])
+  body2: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-sm', computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -205,8 +205,8 @@ const wrapperJsx: {
       </span>
     )
   },
-  body3: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['text-xs', computedAdditionalClassNames])
+  body3: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['text-xs', computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -214,8 +214,8 @@ const wrapperJsx: {
       </span>
     )
   },
-  caption: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn(['leading-5 text-xs text-gray-600', computedAdditionalClassNames])
+  caption: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn(['leading-5 text-xs text-gray-600', computedAdditionalClassName])
 
     return (
       <p ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
@@ -223,8 +223,8 @@ const wrapperJsx: {
       </p>
     )
   },
-  custom: ({children, computedAdditionalClassNames, style, onClick, ref}) => {
-    const mergedClassNames = cn([computedAdditionalClassNames])
+  custom: ({children, computedAdditionalClassName, style, onClick, ref}) => {
+    const mergedClassNames = cn([computedAdditionalClassName])
 
     return (
       <span ref={ref} onClick={onClick} className={mergedClassNames} style={style}>
