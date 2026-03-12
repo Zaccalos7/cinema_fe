@@ -17,7 +17,6 @@ const HandleLive = () => {
             items-center justify-start bg-sidebar-foreground bg-indigo-950 border-2 border-violet-950 p-4`}
         bordered
       >
-        {JSON.stringify(isMobile)}
         <NewDiv className="w-full gap-4 p-2 flex flex-col">
           <NewButton
             className="w-full flex items-center justify-start bg-indigo-950 border-2  border-purple-200 "
