@@ -6,53 +6,44 @@ const HandleLive = () => {
   const navigation = useNavigation()
 
   return (
-    <NewDiv className="w-full h-full p-4 gap-1" direction="row">
+    <NewDiv className="w-full h-full p-4 gap-1 flex flex-row">
       {navigation.state !== 'idle' && <NewUILocker customMessage="Loading..." />}
 
       <NewDiv
-        className="h-full w-1/6 items-center justify-start bg-sidebar-foreground bg-indigo-950 border-2
-           border-violet-950 p-4 "
-        direction="column"
+        className="flex flex-col h-full min-w-[280px] max-w-[300px] items-center justify-start bg-sidebar-foreground bg-indigo-950 border-2 border-violet-950 p-4"
         bordered
       >
-        <NewDiv className="w-full h-full gap-4 p-2" direction="column">
+        <NewDiv className="w-full gap-4 p-2 flex flex-col">
           <NewButton
-            className="w-full  bg-indigo-950 border-2 border-purple-200"
+            className="w-full flex items-center justify-start bg-indigo-950 border-2 border-purple-200"
             type="button"
             label="Gestisci live"
             iconName="list-video"
-            onClick={() => {
-              navigate('./live')
-            }}
+            onClick={() => navigate('./live')}
           />
+
           <NewButton
-            className="w-full bg-indigo-950 border-2 border-purple-200"
+            className="w-full flex items-center justify-start bg-indigo-950 border-2 border-purple-200"
             type="button"
             label="Task Manager"
             iconName="monitor-cog"
-            onClick={() => {
-              navigate('./taskManager')
-            }}
+            onClick={() => navigate('./taskManager')}
           />
 
           <NewButton
-            className="w-full bg-indigo-950 border-2 border-purple-200"
+            className="w-full flex items-center justify-start bg-indigo-950 border-2 border-purple-200"
             type="button"
             label="Configurazioni"
             iconName="columns-3-cog"
-            onClick={() => {
-              navigate('./configurations')
-            }}
+            onClick={() => navigate('./configurations')}
           />
 
           <NewButton
-            className="w-full bg-indigo-950 border-2 border-purple-200"
+            className="w-full flex items-center justify-start bg-indigo-950 border-2 border-purple-200"
             type="button"
             label="Impostazioni"
             iconName="user-cog"
-            onClick={() => {
-              navigate('./setting')
-            }}
+            onClick={() => navigate('./setting')}
           />
         </NewDiv>
       </NewDiv>
