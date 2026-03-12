@@ -65,7 +65,7 @@ const HandlerSetting = () => {
         />
       </NewDiv>
       <NewDiv className="h-5/6 w-full gap-4 p-4 items-center justify-start" direction="column">
-        <NewTypography variant="large" className="text-5xl">
+        <NewTypography variant="large" className="text-xl">
           Url
         </NewTypography>
 
@@ -81,7 +81,7 @@ const HandlerSetting = () => {
           />
         </NewDiv>
 
-        <NewTypography variant="large" className="text-5xl">
+        <NewTypography variant="large" className="text-xl">
           Key
         </NewTypography>
 
@@ -107,7 +107,7 @@ const HandlerSetting = () => {
           />
         </NewDiv>
 
-        <NewTypography variant="large" className="text-5xl">
+        <NewTypography variant="large" className="text-xl">
           Descrizione
         </NewTypography>
 

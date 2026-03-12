@@ -70,8 +70,8 @@ const UserConfigurations = ({loaderData}: Route.ComponentProps) => {
   }, [configurationsFilter])
 
   return (
-    <NewDiv className="h-full w-full gap-2 handlerSettingsStyle" direction="column">
-      <NewDiv className="h-5/12 w-1/3 items-center justify-center bg-yellow-200">
+    <NewDiv className="h-full w-full gap-2 backGround " direction="column">
+      <NewDiv className="p-2 h-5/12 w-1/3 items-center justify-center">
         <NewCard
           title={
             <NewDiv
@@ -82,11 +82,17 @@ const UserConfigurations = ({loaderData}: Route.ComponentProps) => {
               <NewIcon name="youtube" />
             </NewDiv>
           }
-          description="qualcosa"
+          description={
+            <NewDiv className="w-full items-center justify-center ">
+              <NewTypography>Per clicca la donnola</NewTypography>
+            </NewDiv>
+          }
           width={200}
           footer={footerCard()}
         >
-          ciao
+          <NewDiv className="p-2 items-center justify-center">
+            <NewTypography asLink>rtm//twitch/tv/mario</NewTypography>
+          </NewDiv>
         </NewCard>
       </NewDiv>
     </NewDiv>
