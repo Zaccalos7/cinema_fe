@@ -11,6 +11,7 @@ export {NewSpinner} from './NewSpinner'
 export {NewUILocker} from './NewUILocker'
 export {NewSelect} from './NewSelect'
 export {NewCard} from './NewCard'
+export {NewModal} from './NewModal'
 
 // PRIMITIVE
 export {Button} from './ui/button'
