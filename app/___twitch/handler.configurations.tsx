@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react'
 import {useFetcher} from 'react-router'
 import {useQueryStates, parseAsString} from 'nuqs'
 import {NewCard, NewDiv, NewIcon, NewModal, NewTypography} from '~/components'
-import './styles/backGround.css'
 import {Route} from './+types/handler.configurations'
 import {blue, green, red} from '~/libs/tailwind-colors'
 import {SettingRecord} from './types/settingTypes'
@@ -83,14 +82,13 @@ const CardData = (configuration: SettingRecord) => {
         }
         width={250}
         footer={FooterCard(setIsDetailsModalOpen)}
-        titleSize='extraLarge'
+        titleSize="extraLarge"
       >
         <NewDiv className="p-2 items-center justify-center">
           <NewTypography asLink>{streamUrl}</NewTypography>
         </NewDiv>
       </NewCard>
 
-      
       <NewModal
         isOpen={isDetailsModalOpen}
         setIsOpen={setIsDetailsModalOpen}
@@ -127,7 +125,7 @@ const UserConfigurations = ({loaderData}: Route.ComponentProps) => {
   }, [configurationsFilter])
 
   return (
-    <NewDiv className="h-full w-full flex-wrap gap-2 backGround " direction="column">
+    <NewDiv className="h-full w-full flex-wrap gap-2 " direction="column">
       <NewDiv className="p-2 h-5/12 w-full flex flex-wrap items-stretch justify-start gap-4">
         {loaderData?.configurationsList?.map((configuration: SettingRecord) => {
           return (

@@ -11,7 +11,6 @@ import {
 } from '~/components'
 import {type RadioItem} from '~/components/NewRadioButtons'
 import './styles/handlerSettingsStyle.css'
-import './styles/backGround.css'
 import {useToast} from '~/hooks/useToast'
 import {type SettingRecord} from './types/settingTypes'
 
