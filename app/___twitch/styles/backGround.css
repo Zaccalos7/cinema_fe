@@ -12,3 +12,23 @@ body {
 
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
 }
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(40, 20, 90, 0.15);
+}
+
+button[type='submit'] {
+  background: rgba(76, 29, 149, 0.85);
+  color: white;
+  border: none;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background: rgba(76, 29, 149, 0.95);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
