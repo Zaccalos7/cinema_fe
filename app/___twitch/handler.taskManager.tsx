@@ -11,6 +11,7 @@ interface InfoCellBlockType {
   cellName: string
   cellValue: number
   iconColor: string
+  isAtemperature?: boolean
 }
 
 export const loader = async ({request}: Route.LoaderArgs) => {
@@ -43,7 +44,13 @@ const colorLevel = (value: number) => {
   }
 }
 
-const InfoCellBlock = ({iconName, cellName, cellValue, iconColor}: InfoCellBlockType) => {
+const InfoCellBlock = ({
+  iconName,
+  cellName,
+  cellValue,
+  iconColor,
+  isAtemperature = false
+}: InfoCellBlockType) => {
   const toTransitionsColor = colorLevel(cellValue)
 
   return (
@@ -59,10 +66,10 @@ const InfoCellBlock = ({iconName, cellName, cellValue, iconColor}: InfoCellBlock
         <NewTypography className="text-white text-5xl animate-gradient">{cellName}</NewTypography>
 
         <NewTypography className="text-right font-extrabold text-2xl text-zinc-200">
-          {cellValue}%
+          {cellValue} {isAtemperature ? '°C' : '%'}
         </NewTypography>
 
-        <NewDiv className="w-full h-[14px] bg-slate-300 rounded-full overflow-hidden shadow-inner">
+        <NewDiv className="w-full h-20 bg-slate-300 rounded-full overflow-hidden shadow-inner">
           <NewDiv
             className={`h-full rounded-full transition-all duration-700 ease-out bg-gradient-to-r from-blue-400 ${toTransitionsColor}`}
             style={{width: `${cellValue}%`}}
@@ -119,6 +126,7 @@ const HandlerTaskManager = ({loaderData}: Route.ComponentProps) => {
           cellValue={cpuTemperatureInfo.value}
           iconName="thermometer"
           iconColor={violet[600]}
+          isAtemperature
         />
       </NewDiv>
     </NewDiv>
