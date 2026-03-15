@@ -1,6 +1,7 @@
 import {Outlet, useNavigate, useNavigation} from 'react-router'
-import {NewButton, NewDiv, NewSpinner, NewUILocker} from '~/components'
+import {NewButton, NewDiv, NewUILocker} from '~/components'
 import {useIsMobile} from '~/hooks/useIsMobile'
+import './styles/backGround.css'
 
 const HandleLive = () => {
   const navigate = useNavigate()
@@ -9,7 +10,7 @@ const HandleLive = () => {
   const {isMobile} = useIsMobile()
 
   return (
-    <NewDiv className="w-full h-full p-4 gap-1 flex flex-row">
+    <NewDiv className="w-full h-full p-4 gap-1 flex flex-row backGround">
       {navigation.state !== 'idle' && <NewUILocker customMessage="Loading..." />}
 
       <NewDiv
